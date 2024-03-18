@@ -51,6 +51,6 @@ export default {
 </script>
 
 <template>
-  <p>It is {{ weekday }}, the {{ date }}</p>
-  <p>{{ time }}</p>
+  <h2>It is {{ weekday }}, the {{ date }}</h2>
+  <h2>{{ time }}</h2>
 </template>

@@ -16,10 +16,7 @@ const togglePanelVisibility = () => {
 
 <template>
   <header>
-    <SidePanel :is-visible="isPanelVisible" />
-    <button class="toggle-button" @click="togglePanelVisibility">{{ label }}</button>
-
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/logo.webp" width="125" height="125" />
 
     <div class="wrapper">
       <MainWelcome msg="Welcome" />
@@ -32,17 +29,23 @@ const togglePanelVisibility = () => {
   </header>
 
   <RouterView />
+
+  <SidePanel :is-visible="isPanelVisible" />
+    <button class="toggle-button" @click="togglePanelVisibility">{{ label }}</button>
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
+  background-image: url(../src/assets/background.png);
+  padding: 2%;
 }
 
 .logo {
   display: block;
   margin: 0 auto 2rem;
+  border-radius: 50%;
 }
 
 nav {
