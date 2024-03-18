@@ -1,9 +1,7 @@
-<script>
-
-</script>
+<script></script>
 
 <template>
-    <button>Login</button>
+  <button>Login</button>
 </template>
 
 <style></style>

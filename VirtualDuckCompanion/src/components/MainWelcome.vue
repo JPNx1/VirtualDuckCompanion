@@ -8,7 +8,10 @@ import Login from '../components/Login.vue'
   <div>
     <Clock />
   </div>
-  <Login />
+  <br />
+  <div>
+    <Login />
+  </div>
 </template>
 
 <script>

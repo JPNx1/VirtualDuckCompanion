@@ -1,10 +1,24 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import MainWelcome from './components/MainWelcome.vue'
+import SidePanel from './components/SidePanel.vue'
+
+const isPanelVisible = ref(false)
+let label = ref('>')
+
+const togglePanelVisibility = () => {
+  isPanelVisible.value = !isPanelVisible.value
+  if (isPanelVisible.value) label = '<'
+  else label = '>'
+}
 </script>
 
 <template>
   <header>
+    <SidePanel :is-visible="isPanelVisible" />
+    <button class="toggle-button" @click="togglePanelVisibility">{{ label }}</button>
+
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -36,6 +50,15 @@ nav {
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
+}
+
+/* Add your styles here, including styles for .toggle-button */
+.toggle-button {
+  position: fixed;
+  top: 1%;
+  left: 0; /* Adjust based on the side panel's width */
+  transform: translateY(-50%);
+  z-index: 1000; /* Ensure it's above other elements */
 }
 
 nav a.router-link-exact-active {
