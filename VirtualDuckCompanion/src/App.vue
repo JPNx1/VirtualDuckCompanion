@@ -31,7 +31,7 @@ const togglePanelVisibility = () => {
   <RouterView />
 
   <SidePanel :is-visible="isPanelVisible" />
-    <button class="toggle-button" @click="togglePanelVisibility">{{ label }}</button>
+  <button class="toggle-button" @click="togglePanelVisibility">{{ label }}</button>
 </template>
 
 <style scoped>
